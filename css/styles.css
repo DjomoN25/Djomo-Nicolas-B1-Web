@@ -1,0 +1,126 @@
+/* CSS Global */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Body */
+body {
+	background-color: #6a82fb;
+}
+
+/* Panel de connexion - enregistrement */
+#index form:first-child, #nouveau form:first-child {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 30vw;
+	margin-top: 30vh;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+	background-color: white;
+	border-radius: 5px;
+
+}
+
+#index p:first-child, #nouveau p:first-child {
+	text-align: center;
+	font-size: 2em;
+}
+
+#index form:first-child button, #index form:first-child input, #nouveau form:first-child button, #nouveau form:first-child input {
+	margin-top: 5px;
+	height: 30px;
+	border-radius: 5px;
+	font-weight: bold;
+	padding-left: 5px;
+	border: solid black 2px;
+}
+
+#index form:first-child button, #nouveau form:first-child button{
+	background-color: #56ab2f; 
+}
+
+#index form:first-child button, #nouveau form:first-child button {
+	margin-bottom: 5px;
+}
+
+/* Bouton de consultation des news */
+#index a:nth-child(0n+2), #nouveau a:nth-child(0n+2) {
+	display: flex;
+	justify-content: center;
+	background-color: #0F5298;
+	margin-left: auto;
+	margin-right: auto;
+	width: 30vw;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+}
+
+
+/* News - titre */
+#news p:first-child {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	text-align: center;
+	background-color: white;
+	width: 80%;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+/* News - Choix catégorie + Retour */
+#news form {
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row;
+	margin-top: 10px;
+	margin-right: 10%;
+}
+
+#news form a {
+	height: 25px;
+	background-color: #de6262 ;
+	margin-right: 10px;
+	border-radius: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+}
+
+#news form button, #news form div select {
+	height: 25px;
+}
+
+#news form select {
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border: solid black 1px;
+	border-right: none;
+	font-weight: bold;
+}
+
+#news form button
+{
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	width: 30px;
+	border: solid black 1px;
+	border-left: none;
+	background-color: white;
+	font-weight: bold;
+}
