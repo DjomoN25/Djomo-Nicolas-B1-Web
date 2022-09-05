@@ -8,13 +8,23 @@
     </head>
     <body id="nouveau">
 
+        <!-- Message erreur/success -->
+        <div>
+            <?php
+                if(isset($info))
+                {
+                    echo $info;
+                }
+            ?>
+        </div>
+
         <!-- Panel enregistrement -->
     	<form method="post" action="">
     		<p>S'enregistrer</p>
-    		<input type="text" name="" placeholder="Username">
-    		<input type="password" name="" placeholder="Password">
-            <input type="password" name="" placeholder="Repeat Password">
-    		<button type="submit">S'enregistrer</button>
+    		<input type="text" name="username" placeholder="Nom d'utilisateur" required>
+    		<input type="password" name="password" placeholder="Mot de passe" required>
+            <input type="password" name="repeatPassword" placeholder="Répéter mot de passe" required>
+    		<button type="submit" name="envoyer">S'enregistrer</button>
     		<p>Déjà inscrit ? <a href="./index.php">Cliquez-ici !</a></p>
     	</form>
 

@@ -1,5 +1,4 @@
 <?php
-
 	/* Connexion à la database */
 	$mysqli = new mysqli("localhost", "root", "", "examen");
 	
@@ -15,14 +14,10 @@
 	date_default_timezone_set("Europe/Brussels");
 
 	/* Fonctions */
-
-	function afficherNews()
+	function afficherNews($database)
 	{
-		/* Variable d'accès à la base de donnée */
-		global $mysqli;
-
-		/* Requête SQL (Sélectionner résultats dont l'expiration n'est pas atteinte) + ORDRE  */
-		$result = mysqli_query($mysqli, "SELECT * FROM news");
+		/* Requête SQL (Sélectionner résultats dont l'expiration n'est pas atteinte et ordonner) */
+		$result = mysqli_query($database, "SELECT * FROM news WHERE expiration IS NULL OR expiration > NOW() ORDER BY publication");
 
 		//Si la requête fonctionne
 		if($result)
@@ -32,5 +27,59 @@
 			return($tab);
 		}
 	}
+
+	function verifierPresenceUtilisateur($database, $nomUtilisateur)
+	{
+		/* Eviter les caractères mysqli */
+		mysqli_real_escape_string($database, $nomUtilisateur);
+
+		/* Requête SQL (Sélectionner résultats dont l'expiration n'est pas atteinte et ordonner) */
+		$result = mysqli_query($database, "SELECT * FROM utilisateur WHERE pseudo = '$nomUtilisateur'");
+
+		//Si la requête fonctionne
+		if($result)
+		{
+			//Si il y a / n'y a pas l'utilisateur dans la base de données.
+			if(mysqli_num_rows($result) == 0)
+			{
+				return(false);
+			}
+			else
+			{
+				return(true);
+			}
+		}
+	}
+
+	function insererUtilisateur($database, $nomUtilisateur, $hash)
+	{
+		/* Eviter les caractères mysqli */
+		mysqli_real_escape_string($database, $nomUtilisateur);
+
+		/* Requête SQL (Sélectionner résultats dont l'expiration n'est pas atteinte et ordonner) */
+		mysqli_query($database, "INSERT INTO utilisateur (pseudo, mdp) VALUES ('$nomUtilisateur' , '$hash')");
+	}
+
+	function recupererIdentifiants($database, $nomUtilisateur)
+	{
+		/* Eviter les caractères mysqli */
+		mysqli_real_escape_string($database, $nomUtilisateur);
+
+		/* Requête SQL (Sélectionner résultats dont l'expiration n'est pas atteinte et ordonner) */
+		$result = mysqli_query($database, "SELECT * FROM utilisateur WHERE pseudo = '$nomUtilisateur'");
+
+		//Si la requête fonctionne
+		if($result)
+		{
+			//Si il y a l'utilisateur dans la base de données.
+			if(mysqli_num_rows($result) != 0)
+			{
+				$row = mysqli_fetch_row($result);
+				return($row);
+			}
+		}
+	}
+
+
 
 ?>

@@ -2,17 +2,20 @@
 	/* Lancer la session */
 	session_start();
 
+	/* Vérifier l'état de connexion */
+	if(!isset($_SESSION['connected']))
+	{
+		header('Location: ./index.php');
+	}
+
 	/* Importer modèle */
 	require_once('./modeles/modele.php');
 
-	/* Appeler la fonction pour récupérer les news */
-	$news = afficherNews($mysqli);
+
 
 	/* Importer la vue */
-	require_once('./vues/news_vues.php');
+	require_once('./vues/panel_vue.php');
 
 	/* Fermer la connexion à la base de données */
 	mysqli_close($mysqli);
-
-
 ?>

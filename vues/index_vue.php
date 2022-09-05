@@ -8,12 +8,22 @@
     </head>
     <body id="index">
 
+        <!-- Message erreur/success -->
+        <div>
+            <?php
+                if(isset($info))
+                {
+                    echo $info;
+                }
+            ?>
+        </div>
+
     	<!-- Panel connexion -->
     	<form method="post" action="./">
     		<p>Connexion</p>
-    		<input type="text" name="" placeholder="Username">
-    		<input type="password" name="" placeholder="Password">
-    		<button type="submit">Connexion</button>
+    		<input type="text" name="username" placeholder="Nom d'utilisateur">
+    		<input type="password" name="password" placeholder="Mot de passe">
+    		<button type="submit" name="envoyer">Connexion</button>
     		<p>Pas encore inscrit ? <a href="./nouveau.php">Cliquez-ici !</a></p>
     	</form>
 

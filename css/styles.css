@@ -10,26 +10,25 @@ body {
 }
 
 /* Panel de connexion - enregistrement */
-#index form:first-child, #nouveau form:first-child {
+#index form:first-of-type, #nouveau form:first-of-type {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	width: 30vw;
-	margin-top: 30vh;
+	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 20px;
 	background-color: white;
 	border-radius: 5px;
-
 }
 
-#index p:first-child, #nouveau p:first-child {
+#index p:nth-of-type(1), #nouveau p:nth-of-type(1) {
 	text-align: center;
 	font-size: 2em;
 }
 
-#index form:first-child button, #index form:first-child input, #nouveau form:first-child button, #nouveau form:first-child input {
+#index form:first-of-type button, #index form:first-of-type input, #nouveau form:first-of-type button, #nouveau form:first-of-type input {
 	margin-top: 5px;
 	height: 30px;
 	border-radius: 5px;
@@ -38,16 +37,48 @@ body {
 	border: solid black 2px;
 }
 
-#index form:first-child button, #nouveau form:first-child button{
-	background-color: #56ab2f; 
+#index form:first-of-type button, #nouveau form:first-of-type button{
+	background-color: #32de84; 
 }
 
-#index form:first-child button, #nouveau form:first-child button {
+#index form:first-of-type button, #nouveau form:first-of-type button {
 	margin-bottom: 5px;
 }
 
+/* Gestion des erreurs / succès formulaires enregistrement + connexion */
+#index div:first-of-type,  #nouveau div:first-of-type {
+	display: flex;
+	justify-content: center;
+	width: 32vw;
+	margin-top: 30vh;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5px;
+}
+
+#index div:first-of-type .errorMessage, #nouveau div:first-of-type .errorMessage {
+	background-color: red;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 5px;
+	width: 100%;
+}
+
+#index div:first-of-type .successMessage, #nouveau div:first-of-type .successMessage {
+	background-color: #32de84;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 5px;
+	width: 100%;
+}
+
+
 /* Bouton de consultation des news */
-#index a:nth-child(0n+2), #nouveau a:nth-child(0n+2) {
+#index a:nth-child(0n+3), #nouveau a:nth-child(0n+3) {
 	display: flex;
 	justify-content: center;
 	background-color: #0F5298;
@@ -65,10 +96,8 @@ body {
 	text-decoration: none;
 }
 
-
 /* News - titre */
-#news #newsheader
-{
+#news #newsheader {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
