@@ -7,7 +7,7 @@
         <title>HEPL News | Liste des news</title>
     </head>
     <body id="news">
-        <p>LISTE DES NEWS</p>
+        <p id="newsheader">LISTE DES NEWS</p>
 
         <!-- CHOISIR LA CATEGORIE -->
         <form method="post" action="">
@@ -20,6 +20,31 @@
             </select>
             <button type="submit">></button>
         </form>
+
+        <div>
+            <?php 
+                if(isset($news))
+                {
+                    if($news != null)
+                    {
+                        foreach ($news as $value) 
+                        {
+                            echo "<div class=\"nouveaute\">";
+                                echo "<div class=\"en-tete\">";
+                                    echo "<p>Date : ".$value['publication']."</p>";
+                                    echo "<p>Titre : ".$value['titre']."</p>";
+                                    echo "<p>Auteur : ".$value['pseudo']."</p>";
+                                echo "</div>";
+
+                                echo "<div class=\"corp\">";
+                                    echo "<p>".$value['texte']."</p>";
+                                echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+                }
+            ?>
+        </div>
 
     </body>
 </html>
