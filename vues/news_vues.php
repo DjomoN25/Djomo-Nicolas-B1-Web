@@ -12,13 +12,20 @@
         <!-- CHOISIR LA CATEGORIE -->
         <form method="post" action="">
             <a href="./index.php">RETOUR</a>
-            <select>
-                <option value="" disabled selected>Categorie</option>
-                <option></option>
-                <option></option>
-                <option></option>
+            <select name="category">
+                <?php
+                    $categories = recupererToutesCategorie($mysqli);
+
+                    if(!empty($categories))
+                    {
+                        foreach($categories as $value)
+                        {
+                            echo "<option value=\"".$value['id']."\">".$value['nom']."</option>";
+                        }
+                    }
+                ?>
             </select>
-            <button type="submit">></button>
+            <button type="submit" name="filter">></button>
         </form>
 
         <div>
@@ -29,7 +36,7 @@
                     {
                         echo "<div class=\"nouveaute\">";
                             echo "<div class=\"en-tete\">";
-                                echo "<p>Date : ".$value['publication']."</p>";
+                                echo "<p>Date : ".  date("d-m-Y", strtotime($value['publication'])) ."</p>";
                                 echo "<p>Titre : ".$value['titre']."</p>";
                                 echo "<p>Auteur : ".$value['pseudo']."</p>";
                             echo "</div>";

@@ -11,8 +11,33 @@
 	/* Importer modèle */
 	require_once('./modeles/modele.php');
 
+	/* Vérifier si l'id du formulaire est bien communiquer et récupérer le formulaire si existe si non rediriger */
+	if(isset($_GET['idNews']))
+	{
+		if(is_numeric($_GET['idNews']))
+		{
+			$news = recupererNews($mysqli, $_GET['idNews']);
+
+			if(empty($news))
+			{
+				header('Location: ./panel.php');
+			}
+
+			//Les informations étant chargées si aucune contrainte, elles sont récupérables dans la vue
+		}
+		else
+		{
+			header('Location: ./panel.php');
+		}
+	}
+	else
+	{
+		header('Location: ./panel.php');
+	}
+
+	/* Vérifier si formulaire envoyé */
 	/* Vérifier si il y a un envoie de formulaire */
-	if(isset($_POST['ajouter']))
+	if(isset($_POST['Modifier']))
 	{
 		/* Vérifier les données pour pas que les noms soient modifiés*/
 		if(isset($_POST['title']))
@@ -54,8 +79,8 @@
 												if($_POST['expiryDate'] >= $now)
 												{
 													//Insérer avec date expiration connue
-													$info = "<p class=\"successMsg\">La news a bien été ajoutée</p>";
-													insererNews($mysqli, $_POST['title'], $_POST['news'], $_POST['publicationDate'], $_POST['expiryDate'], $_POST['category']);
+													$info = "<p class=\"successMsg\">La news a bien été modifiée, veuillez actualiser la page</p>";
+													updateNews($mysqli, $_POST['title'], $_POST['news'], $_POST['publicationDate'], $_POST['expiryDate'], $_POST['category'], $_GET['idNews']);
 												}
 												else
 												{
@@ -65,8 +90,9 @@
 											else
 											{
 												//Insérer avec date expiration nulle
-												$info = "<p class=\"successMsg\">La news a bien été ajoutée</p>";
-												insererNews($mysqli, $_POST['title'], $_POST['news'], $_POST['publicationDate'], "NULL", $_POST['category']);
+												$info = "<p class=\"successMsg\">La news a bien été modifiée, veuillez actualiser la page</p>";
+												
+												updateNews($mysqli, $_POST['title'], $_POST['news'], $_POST['publicationDate'], "NULL", $_POST['category'], $_GET['idNews']);
 											}
 										}
 										else
@@ -118,7 +144,7 @@
 	}
 
 	/* Importer la vue */
-	require_once('./vues/panel_vue.php');
+	require_once('./vues/modifier_vue.php');
 
 	/* Fermer la connexion à la base de données */
 	mysqli_close($mysqli);

@@ -194,3 +194,308 @@ body {
 	font-weight: normal;
 	text-align: center;
 }
+
+/* Panel de news - titre */
+#panel h1 {
+	background-color: white;
+	border-radius: 5px;
+	width: 80%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* Panel de news - déconnexion */
+#panel form:nth-of-type(1) {
+	display: flex;
+	justify-content: flex-end;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-top: 20px;
+}
+
+#panel form:nth-of-type(1) button {
+	margin-top: 10px;
+	background-color: red;
+	border-radius: 5px;
+	height: 35px;
+	width: 10%;
+	color: white;
+	font-weight: bold;
+	padding-left: 5px;
+	border: solid black 1px;
+}
+
+/* Panel de news - Message erreur + sucess */
+#panel div:nth-of-type(1) {
+	display: flex;
+	justify-content: center;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 10px;
+}
+
+#panel div:nth-of-type(1) .successMsg {
+	background-color: #32de84;
+	text-align: center;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	width: 100%;
+}
+
+#panel div:nth-of-type(1) .errorMsg {
+	background-color: red;
+	text-align: center;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	width: 100%;
+}
+
+/* Panel de news - formulaire */
+#panel form:nth-of-type(2) {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 5px;
+	padding: 20px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#panel form:nth-of-type(2) input {
+	border-radius: 5px;
+	height: 30px;
+	border: solid black 1px;
+	padding-left: 5px;
+}
+
+#panel form:nth-of-type(2) textarea {
+	border: solid black 1px;
+	border-radius: 5px;
+	height: 80px;
+	resize: none;
+	padding-left: 5px;
+}
+
+#panel form:nth-of-type(2) label {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+#panel form:nth-of-type(2) select {
+	border-radius: 5px;
+	height: 30px;
+	border: solid black 1px;
+	padding-left: 5px;
+}
+
+#panel form:nth-of-type(2) button {
+	margin-top: 10px;
+	background-color: #32de84;
+	border-radius: 5px;
+	height: 35px;
+	width: 10%;
+	color: white;
+	font-weight: bold;
+	padding-left: 5px;
+	border: solid black 1px;
+}
+
+/* Panel de news - titre tableau de news */
+#panel h1:nth-of-type(2)
+{
+	margin-top: 20px;
+}
+
+/* Panel de news - tableau de news */
+#panel table {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border-radius: 5px;
+	border-collapse: collapse;
+	width: 82%;
+	border: solid black 1px;
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+#panel table tr {
+	height: 30px;
+}
+
+#panel table td {
+	text-align: center;
+}
+
+#panel table tr th {
+	width: auto;
+	border-bottom: solid black 1px;
+	text-align: center;
+}
+
+#panel table tr th:nth-of-type(1) {
+	width: 15%;
+}
+
+#panel table tr th:nth-of-type(2) {
+	width: 35%;
+}
+
+#panel table tr td a:nth-of-type(1) {
+	text-decoration: none;
+	background-color: red;
+	border-radius: 5px;
+	padding: 5px;
+	color: black;
+	font-weight: bold;
+}
+
+#panel table tr td a:nth-of-type(2) {
+	text-decoration: none;
+	background-color: #0F5298;
+	border-radius: 5px;
+	padding: 5px;
+	color: black;
+	font-weight: bold;
+}
+
+/* Panel de modification de news - titre */
+#modification h1 {
+	background-color: white;
+	border-radius: 5px;
+	width: 80%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* Panel de news - Bouton retour */
+#modification div:nth-of-type(1) {
+	display: flex;
+	width: 80%;
+	justify-content: flex-end;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#modification div:nth-of-type(1) a {
+	background-color: #de6262;
+	padding: 5px;
+	border-radius: 5px;
+	margin-top: 10px;
+	text-decoration: none;
+	margin-top: 20px;
+}
+
+/* Panel de news - formulaire */
+#modification form:nth-of-type(1) {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 5px;
+	padding: 20px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#modification form:nth-of-type(1) input {
+	border-radius: 5px;
+	height: 30px;
+	border: solid black 1px;
+	padding-left: 5px;
+}
+
+#modification form:nth-of-type(1) textarea {
+	border: solid black 1px;
+	border-radius: 5px;
+	height: 80px;
+	resize: none;
+	padding-left: 5px;
+}
+
+#modification form:nth-of-type(1) label {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+#modification form:nth-of-type(1) select {
+	border-radius: 5px;
+	height: 30px;
+	border: solid black 1px;
+	padding-left: 5px;
+}
+
+#modification form:nth-of-type(1) button {
+	margin-top: 10px;
+	background-color: #32de84;
+	border-radius: 5px;
+	height: 35px;
+	width: 10%;
+	color: white;
+	font-weight: bold;
+	padding-left: 5px;
+	border: solid black 1px;
+}
+
+/* Modification panel - msg erreur + success */
+#modification div:nth-of-type(2) {
+	display: flex;
+	justify-content: center;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 10px;
+}
+
+#modification div:nth-of-type(2) .successMsg {
+	background-color: #32de84;
+	text-align: center;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	width: 100%;
+}
+
+#modification div:nth-of-type(2) .errorMsg {
+	background-color: red;
+	text-align: center;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	width: 100%;
+}
